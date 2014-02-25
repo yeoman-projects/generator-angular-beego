@@ -31,14 +31,7 @@ module.exports = function (grunt) {
 					'<%%= yeoman.app %>/css/**/*',
 					'<%%= yeoman.app %>/js/**/*',
 					'<%%= yeoman.app %>/views/**/*'
-				],
-				go: {
-					files: ['<%%= yeoman.app %>/**/*.go'],
-					tasks: ['goserver'],
-					options: {
-						nospawn: true,
-					}
-				}
+				]
 				//tasks: ['sync:dist']
 			}
 		},
@@ -53,7 +46,7 @@ module.exports = function (grunt) {
 				}
 			],
 			options: {
-				port: 9000,
+				port: <%= appPort %>,
 				// Change this to '0.0.0.0' to access the server from outside.
 				hostname: 'localhost',
 				livereload: 35729
@@ -109,24 +102,15 @@ module.exports = function (grunt) {
 					'test/lib/angular-scenario': 'angular-scenario'
 				}
 			}
-		},
-		goserver: {
-			default: {
-				srcPath: __dirname,
-				srcFile: 'server',
-				binPath: '<%= goBin %>'
-			}
 		}
 	});
 
 	grunt.registerTask('server', function (target) {
 		grunt.task.run([
-			'goserver',
 			'configureProxies',
 			'connect:livereload',
 			'watch'
 		]);
 	});
 
-	grunt.loadNpmTasks('grunt-goserver');
 };

@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= _.capitalize(baseName) %></title>
-  <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
-  <link href="lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
-  <link href="css/app.css" rel="stylesheet">
+  <link href="static/lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
+  <link href="static/lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+  <link href="static/css/app.css" rel="stylesheet">
 </head>
 <body>
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -19,7 +19,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="#">Myapp</a>
+       <a class="navbar-brand" href="#"><%= _.capitalize(baseName) %></a>
      </div>
 
      <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,21 +37,21 @@
    <!-- /.container -->
   </nav>
   <div class="container" ng-view></div>
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <script src="lib/jquery-ui/ui/jquery-ui.js"></script>
-  <script src="lib/lodash/dist/lodash.js"></script>
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-resource/angular-resource.js"></script>
-  <script src="lib/angular-route/angular-route.js"></script>
-  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="lib/angular-ui-date/src/date.js"></script>
+  <script src="static/lib/jquery/dist/jquery.js"></script>
+  <script src="static/lib/jquery-ui/ui/jquery-ui.js"></script>
+  <script src="static/lib/lodash/dist/lodash.js"></script>
+  <script src="static/lib/angular/angular.js"></script>
+  <script src="static/lib/angular-resource/angular-resource.js"></script>
+  <script src="static/lib/angular-route/angular-route.js"></script>
+  <script src="static/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="static/lib/angular-ui-date/src/date.js"></script>
 
-  <script src="js/app.js"></script>
-  <script src="js/home/home-controller.js"></script>
+  <script src="static/js/app.js"></script>
+  <script src="static/js/home/home-controller.js"></script>
   <% _.each(entities, function (entity) { %>
-  <script src="js/<%= entity.name %>/<%= entity.name %>-controller.js"></script>
-  <script src="js/<%= entity.name %>/<%= entity.name %>-router.js"></script>
-  <script src="js/<%= entity.name %>/<%= entity.name %>-service.js"></script>
+  <script src="static/js/<%= entity.name %>/<%= entity.name %>-controller.js"></script>
+  <script src="static/js/<%= entity.name %>/<%= entity.name %>-router.js"></script>
+  <script src="static/js/<%= entity.name %>/<%= entity.name %>-service.js"></script>
   <% }); %>
 </body>
 </html>

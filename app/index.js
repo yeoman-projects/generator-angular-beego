@@ -24,50 +24,50 @@ AngularGoMartiniGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   console.log('\n'+
-		'....::::::::::::::,.........,::::::::::::::,...
-		..,=============+~...........:==============,,.
-		.~============:.................,=============,
-		.~==========~~...................~:===========,
-		.~==========~,.......:~~~:.......,,===========,
-		.~==========:......::=====~~.......~==========,
-		.~=========~:.....,=========,......~==========,
-		.~======~~:,......,=========:......,:::=======,
-		.~====:...,,,,,,,,,=========,....,,,,...:~====,
-		.~=,..~==============~:::,.......~~======:.,==,
-		,::.~~===============:...........==========.:::
-		...:======~,::~======:...........::,:======~...
-		...=====,:.....~~====:...............,.=====,,.
-		.,,====:.......,,====:...:~~~~,,.......:====::.
-		.,,====:.........~===~...~====,,.......,====::.
-		.,,====:.........====~...:====,,.......,====::.
-		...~====~~,..............,======~,..,~~====~...
-		,,,,==========,..........,=================,,,,
-		,~=.,:========,.......,,,:===============~:.~~,
-		.~=~..,~======,......~==================,..~==,
-		.~==~~..,,:~~~.....~~=======:::::~~~:,,..:~===,
-		.~=====:,,........,=========,........,,:======,
-		.~=========~:.....,=========:......:==========,
-		.~==========:......~~=======.......~==========,
-		.~==========~:........,,,........,,===========,
-		.~============,..................~============,
-		.~============~.................~=============.
-		.,:==============,............~~============::.
-		...,~~~~~~~~~~~~~~:.........,~~~~~~~~~~~~~~:...
-		...............................................
-		......,,,:,....................................
-		...===========,::::,,,~::::::::::,..::::::::::.
-		.,~===:...,========~~~====~~=======:==========,
-		.~==~:.....,,::~~==,,,===:::=~::~======~=~~===,
-		,~==,,.........,,=~...===.,,=~...===~:::=~~:~~,
-		,~==,,.........,,=~...===,,,=~,,:===...:=~~....
-		.~==~~.....,,::::=~...===,,,=======:...:=~~....
-		.,:===~,..,===~::=~...===.,,=====~:....:=~~....
-		....:~=====~:,...:======,,===~..:===,,,====~...
-		.......,::,.......,:::,,..:::,...:::...::::,...'
-  	);
+		'    ::::::::::::::,         ,::::::::::::::,   \n' +
+		'  ,=============+~           :==============,, \n' +
+		' ~============:                 ,=============,\n' +
+		' ~==========~~                   ~:===========,\n' +
+		' ~==========~,       :~~~:       ,,===========,\n' +
+		' ~==========:      ::=====~~       ~==========,\n' +
+		' ~=========~:     ,=========,      ~==========,\n' +
+		' ~======~~:,      ,=========:      ,:::=======,\n' +
+		' ~====:   ,,,,,,,,,=========,    ,,,,   :~====,\n' +
+		' ~=,  ~==============~:::,       ~~======: ,==,\n' +
+		',:: ~~===============:           ========== :::\n' +
+		'   :======~,::~======:           ::,:======~   \n' +
+		'   =====,:     ~~====:               , =====,, \n' +
+		' ,,====:       ,,====:   :~~~~,,       :====:: \n' +
+		' ,,====:         ~===~   ~====,,       ,====:: \n' +
+		' ,,====:         ====~   :====,,       ,====:: \n' +
+		'   ~====~~,              ,======~,  ,~~====~   \n' +
+		',,,,==========,          ,=================,,,,\n' +
+		',~= ,:========,       ,,,:===============~: ~~,\n' +
+		' ~=~  ,~======,      ~==================,  ~==,\n' +
+		' ~==~~  ,,:~~~     ~~=======:::::~~~:,,  :~===,\n' +
+		' ~=====:,,        ,=========,        ,,:======,\n' +
+		' ~=========~:     ,=========:      :==========,\n' +
+		' ~==========:      ~~=======       ~==========,\n' +
+		' ~==========~:        ,,,        ,,===========,\n' +
+		' ~============,                  ~============,\n' +
+		' ~============~                 ~============= \n' +
+		' ,:==============,            ~~============:: \n' +
+		'   ,~~~~~~~~~~~~~~:         ,~~~~~~~~~~~~~~:   \n' +
+		'                                               \n' +
+		'      ,,,:,                                    \n' +
+		'   ===========,::::,,,~::::::::::,  :::::::::: \n' +
+		' ,~===:   ,========~~~====~~=======:==========,\n' +
+		' ~==~:     ,,::~~==,,,===:::=~::~======~=~~===,\n' +
+		',~==,,         ,,=~   === ,,=~   ===~:::=~~:~~,\n' +
+		',~==,,         ,,=~   ===,,,=~,,:===   :=~~    \n' +
+		' ~==~~     ,,::::=~   ===,,,=======:   :=~~    \n' +
+		' ,:===~,  ,===~::=~   === ,,=====~:    :=~~    \n' +
+		'    :~=====~:,   :======,,===~  :===,,,====~   \n' +
+		'       ,::,       ,:::,,  :::,   :::   ::::,   \n' +
+  	'\n');
   console.log('\n' +
     '+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+\n' +
-    '|   angular    | go  |     martini   |    generator     |\n' +
+    '|   angular    | go  |     beego     |    generator     |\n' +
     '+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+\n' +
     '\n');
 
@@ -82,6 +82,7 @@ AngularGoMartiniGenerator.prototype.askFor = function askFor() {
     this.baseName = props.baseName;
     this.goBin = process.env.GOROOT+'/bin';
     this.baseDir = './';
+    this.appPort = 8080;
     cb();
   }.bind(this));
 };
@@ -95,7 +96,8 @@ AngularGoMartiniGenerator.prototype.app = function app() {
     "goBin": this.goBin,
     "baseDir": this.baseDir,
     "entities": this.entities,
-    "resources": this.resources
+    "resources": this.resources,
+    "appPort": this.appPort
   };
   this.generatorConfigStr = JSON.stringify(this.generatorConfig, null, '\t');
 
@@ -106,28 +108,35 @@ AngularGoMartiniGenerator.prototype.app = function app() {
   this.template('Gruntfile.js', 'Gruntfile.js');
   this.copy('gitignore', '.gitignore');
 
+  var confDir = 'conf/'
+  var controllerDir = 'controllers/'
   var modelsDir = 'models/'
-  var publicDir = 'public/'
-  var routesDir = 'routes/'
+  var publicDir = 'static/'
+  var routesDir = 'routers/'
+  var testsDir = 'tests/'
+  this.mkdir(confDir);
+  this.mkdir(controllerDir);
   this.mkdir(modelsDir);
   this.mkdir(publicDir);
   this.mkdir(routesDir);
+  this.mkdir(testsDir);
 
   this.template('_server.go', 'server.go');
-  this.template('models/_gorp.go', modelsDir + 'gorp.go');
-  this.template('routes/_encoding.go', routesDir + 'encoding.go');
+  this.template('conf/_app.conf', confDir + 'app.conf');
+  this.template('controllers/_default.go', controllerDir + 'default.go');
+  this.template('routers/_router.go', routesDir + 'router.go');
 
   var publicCssDir = publicDir + 'css/';
   var publicJsDir = publicDir + 'js/';
-  var publicViewDir = publicDir + 'views/';
+  var publicViewDir = 'views/';
   this.mkdir(publicCssDir);
   this.mkdir(publicJsDir);
   this.mkdir(publicViewDir);
-  this.template('public/_index.html', publicDir + 'index.html');
-  this.copy('public/css/app.css', publicCssDir + 'app.css');
-  this.template('public/js/_app.js', publicJsDir + 'app.js');
-  this.template('public/js/home/_home-controller.js', publicJsDir + 'home/home-controller.js');
-  this.template('public/views/home/_home.html', publicViewDir + 'home/home.html');
+  this.template('views/_index.tpl', publicViewDir + 'index.tpl');
+  this.copy('static/css/app.css', publicCssDir + 'app.css');
+  this.template('static/js/_app.js', publicJsDir + 'app.js');
+  this.template('static/js/home/_home-controller.js', publicJsDir + 'home/home-controller.js');
+  this.template('views/home/_home.tpl', publicViewDir + 'home/home.tpl');
 };
 
 AngularGoMartiniGenerator.prototype.projectfiles = function projectfiles() {

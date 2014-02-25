@@ -1,18 +1,18 @@
 {
-	"name": "generator-angular-martini",
-	"version": "0.1.7",
-	"description": "A Yeoman generator for AngularJS + Go + Martini",
+	"name": "generator-angular-beego",
+	"version": "0.1.0",
+	"description": "A Yeoman generator for AngularJS + Go + Beego",
 	"keywords": [
 		"yeoman-generator",
 		"go",
 		"golang",
-		"Martini",
+		"Beego",
 		"gorp",
 		"AngularJS",
 		"Twitter Bootstrap"
 	],
-	"homepage": "https://github.com/ninnemana/generator-angular-martini",
-	"bugs": "https://github.com/ninnemana/generator-angular-martini/issues",
+	"homepage": "https://github.com/ninnemana/generator-angular-beego",
+	"bugs": "https://github.com/ninnemana/generator-angular-beego/issues",
 	"author": {
 		"name": "Alex Ninneman",
 		"email": "",
@@ -21,7 +21,7 @@
 	"main": "app/index.js",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/ninnemana/generator-angular-martini.git"
+		"url": "git://github.com/ninnemana/generator-angular-beego.git"
 	},
 	"scripts": {
 		"test": "mocha"
