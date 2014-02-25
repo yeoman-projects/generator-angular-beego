@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 					'<%%= yeoman.app %>/views/**/*'
 				],
 				go: {
-					files: ['**/*.go'],
+					files: ['<%%= yeoman.app %>/**/*.go'],
 					tasks: ['goserver'],
 					options: {
 						nospawn: true,
@@ -112,9 +112,9 @@ module.exports = function (grunt) {
 		},
 		goserver: {
 			default: {
-				srcPath: '.',
+				srcPath: __dirname,
 				srcFile: 'server',
-				binPath: '$GOROOT/bin'
+				binPath: '<%= goBin %>'
 			}
 		}
 	});
