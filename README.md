@@ -1,4 +1,4 @@
-# The Angular-Go-Martini generator
+# The Angular-Beego generator
 
 A [Yeoman](http://yeoman.io) generator for [AngularJS](http://angularjs.org) and [Beego](https://beego.me).
 
@@ -16,7 +16,7 @@ Install the Angular-Go-Martini generator:
 
     npm install -g generator-angular-beego
 
-## Creating a Martini service
+## Creating a Beego service
 
 In a new directory, generate the service:
 
